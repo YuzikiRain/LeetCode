@@ -11,12 +11,22 @@ class Program
         //500. 键盘行
         //LeetCode_Qinyu.KeyboardRow.KeyboardRow keyboardRow = new LeetCode_Qinyu.KeyboardRow.KeyboardRow();
         //keyboardRow.Test();
+
         //557. 反转字符串中的单词 III
         //LeetCode_Qinyu.ReverseWords.ReverseWords_557 reverseWords_557 = new LeetCode_Qinyu.ReverseWords.ReverseWords_557();
         //reverseWords_557.Test();
+
         //728. 自除数
-        LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728 selfDividingNumbers = new LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728();
-        selfDividingNumbers.Test();
+        //LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728 selfDividingNumbers = new LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728();
+        //selfDividingNumbers.Test();
+
+        //867. 转置矩阵
+        //LeetCode_Qinyu.Transpose.Transpose_867 transpose_867 = new LeetCode_Qinyu.Transpose.Transpose_867();
+        //transpose_867.Test();
+
+        //171. Excel表列序号
+        LeetCode_Qinyu.TitleToNumber.TitleToNumber_171 titleToNumber_171 = new LeetCode_Qinyu.TitleToNumber.TitleToNumber_171();
+        titleToNumber_171.Test();
 
 
 

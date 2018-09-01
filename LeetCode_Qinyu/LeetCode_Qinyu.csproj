@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TitleToNumber\TitleToNumber.cs" />
+    <Compile Include="Transpose\Transpose.cs" />
     <Compile Include="SelfDividingNumbers\SelfDividingNumbers.cs" />
     <Compile Include="KeyboardRow\KeyboardRow.cs" />
     <Compile Include="ReverseWords\ReverseWords.cs" />
