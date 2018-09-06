@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteNode\DeleteNode.cs" />
+    <Compile Include="NaryTreePreoderTraversal\NaryTreePreoderTraversal.cs" />
+    <Compile Include="HasAlternatingBits\HasAlternatingBits.cs" />
+    <Compile Include="ShortestToChar\ShortestToChar.cs" />
     <Compile Include="TitleToNumber\TitleToNumber.cs" />
+    <Compile Include="MaxDepthOfNAryTree\MaxDepthOfNAryTree.cs" />
     <Compile Include="Transpose\Transpose.cs" />
     <Compile Include="SelfDividingNumbers\SelfDividingNumbers.cs" />
     <Compile Include="KeyboardRow\KeyboardRow.cs" />

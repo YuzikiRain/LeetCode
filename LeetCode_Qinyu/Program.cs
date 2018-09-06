@@ -25,10 +25,24 @@ class Program
         //transpose_867.Test();
 
         //171. Excel表列序号
-        LeetCode_Qinyu.TitleToNumber.TitleToNumber_171 titleToNumber_171 = new LeetCode_Qinyu.TitleToNumber.TitleToNumber_171();
-        titleToNumber_171.Test();
+        //LeetCode_Qinyu.TitleToNumber.TitleToNumber_171 titleToNumber_171 = new LeetCode_Qinyu.TitleToNumber.TitleToNumber_171();
+        //titleToNumber_171.Test();
 
+        //559. N叉树的最大深度
+        //LeetCode_Qinyu.MaxDepthOfNAryTree.MaxDepthOfNAryTree_559 maxDepthOfNAryTree_559 = new LeetCode_Qinyu.MaxDepthOfNAryTree.MaxDepthOfNAryTree_559();
+        //maxDepthOfNAryTree_559.Test();
 
+        //821. 字符的最短距离
+        //LeetCode_Qinyu.ShortestToChar.ShortestToChar_821 shortestToChar_821 = new LeetCode_Qinyu.ShortestToChar.ShortestToChar_821();
+        //shortestToChar_821.Test();
+
+        //589. N叉树的前序遍历
+        //LeetCode_Qinyu.NaryTreePreoderTraversal.NaryTreePreoderTraversal_589 naryTreePreoderTraversal = new LeetCode_Qinyu.NaryTreePreoderTraversal.NaryTreePreoderTraversal_589();
+        //naryTreePreoderTraversal.Test();
+
+        //693. 交替位二进制数
+        LeetCode_Qinyu.HasAlternatingBits.HasAlternatingBits_693 hasAlternatingBits = new LeetCode_Qinyu.HasAlternatingBits.HasAlternatingBits_693();
+        hasAlternatingBits.Test();
 
 
         //344. 反转字符串
