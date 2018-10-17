@@ -10,9 +10,11 @@ namespace LeetCode_Qinyu.HasAlternatingBits
     {
         public void Test()
         {
+            HasAlternatingBits_693 tt = new HasAlternatingBits_693();
+            tt = tt ?? tt;
             int n = 2147483647;
 
-            Console.Write($"{HasAlternatingBits(n)}");
+            Console.Write($"{n} is {HasAlternatingBits(n)}");
 
             //Console.ReadLine();
         }
@@ -28,10 +30,10 @@ namespace LeetCode_Qinyu.HasAlternatingBits
                 else { i = i * 2; }
                 table.Add(i);
             }
-            foreach (var e in table)
-            {
-                Console.WriteLine(e);
-            }
+            //foreach (var e in table)
+            //{
+            //    Console.WriteLine(e);
+            //}
 
             if (table.Contains(n)) { return true; }
             else { return false; }

@@ -1,49 +1,76 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+
+public static class Extensions
+{
+    public static async void WrapErrors(this Task task)
+    {
+        await task;
+    }
+}
+
 
 class Program
 {
+    static int progress = 0;
+    static int speed = 10;
+    static event Action<string> EnterScene;
+    static int interval = 500;
     static void Main(string[] args)
     {
+        #region 旧的
+
         //500. 键盘行
-        //LeetCode_Qinyu.KeyboardRow.KeyboardRow keyboardRow = new LeetCode_Qinyu.KeyboardRow.KeyboardRow();
+        //var keyboardRow = new LeetCode_Qinyu.KeyboardRow.KeyboardRow();
         //keyboardRow.Test();
 
         //557. 反转字符串中的单词 III
-        //LeetCode_Qinyu.ReverseWords.ReverseWords_557 reverseWords_557 = new LeetCode_Qinyu.ReverseWords.ReverseWords_557();
+        //var reverseWords_557 = new LeetCode_Qinyu.ReverseWords.ReverseWords_557();
         //reverseWords_557.Test();
 
         //728. 自除数
-        //LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728 selfDividingNumbers = new LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728();
+        //var selfDividingNumbers = new LeetCode_Qinyu.SelfDividingNumbers.SelfDividingNumbers_728();
         //selfDividingNumbers.Test();
 
         //867. 转置矩阵
-        //LeetCode_Qinyu.Transpose.Transpose_867 transpose_867 = new LeetCode_Qinyu.Transpose.Transpose_867();
+        //var transpose_867 = new LeetCode_Qinyu.Transpose.Transpose_867();
         //transpose_867.Test();
 
         //171. Excel表列序号
-        //LeetCode_Qinyu.TitleToNumber.TitleToNumber_171 titleToNumber_171 = new LeetCode_Qinyu.TitleToNumber.TitleToNumber_171();
+        //var titleToNumber_171 = new LeetCode_Qinyu.TitleToNumber.TitleToNumber_171();
         //titleToNumber_171.Test();
 
         //559. N叉树的最大深度
-        //LeetCode_Qinyu.MaxDepthOfNAryTree.MaxDepthOfNAryTree_559 maxDepthOfNAryTree_559 = new LeetCode_Qinyu.MaxDepthOfNAryTree.MaxDepthOfNAryTree_559();
+        //var maxDepthOfNAryTree_559 = new LeetCode_Qinyu.MaxDepthOfNAryTree.MaxDepthOfNAryTree_559();
         //maxDepthOfNAryTree_559.Test();
 
         //821. 字符的最短距离
-        //LeetCode_Qinyu.ShortestToChar.ShortestToChar_821 shortestToChar_821 = new LeetCode_Qinyu.ShortestToChar.ShortestToChar_821();
+        //var shortestToChar_821 = new LeetCode_Qinyu.ShortestToChar.ShortestToChar_821();
         //shortestToChar_821.Test();
 
         //589. N叉树的前序遍历
-        //LeetCode_Qinyu.NaryTreePreoderTraversal.NaryTreePreoderTraversal_589 naryTreePreoderTraversal = new LeetCode_Qinyu.NaryTreePreoderTraversal.NaryTreePreoderTraversal_589();
+        //var naryTreePreoderTraversal = new LeetCode_Qinyu.NaryTreePreoderTraversal.NaryTreePreoderTraversal_589();
         //naryTreePreoderTraversal.Test();
 
-        //693. 交替位二进制数
-        LeetCode_Qinyu.HasAlternatingBits.HasAlternatingBits_693 hasAlternatingBits = new LeetCode_Qinyu.HasAlternatingBits.HasAlternatingBits_693();
-        hasAlternatingBits.Test();
+        // 338. 比特位计数
+        var countingBits338 = new LeetCode_Qinyu.CountingBits338.CountingBits338();
+        countingBits338.Test();
+        #endregion
 
+        //EnterScene += LoadSceneAsync;
+        //EnterScene("战斗界面");
+        //Console.WriteLine("触发进入下一场景事件");
+        //Console.WriteLine("不阻塞，继续触发后的处理");
+        //Console.WriteLine("显示 Loading");
+        //Console.ReadLine();
+
+        ////693. 是否是交替位二进制数
+        //var hasAlternatingBits = new LeetCode_Qinyu.HasAlternatingBits.HasAlternatingBits_693();
+        //hasAlternatingBits.Test();
 
         //344. 反转字符串
         //ReverseStringTest reverseStringTest = new ReverseStringTest();
@@ -59,6 +86,32 @@ class Program
         //MaxDepthOfBSTTest maxDepthOfBSTTest = new MaxDepthOfBSTTest();
         //maxDepthOfBSTTest.MaxDepth(root_maxDepthOfBSTTest);
         Console.ReadLine();
+    }
+
+    static async void LoadSceneAsync(string sceneName)
+    {
+        Console.WriteLine($"准备进入 {sceneName}");
+
+        Console.WriteLine("开始读取资源");
+        //int length = await LoadResources();
+        //LoadResources().WrapErrors();
+        LoadResources();
+        //await LoadResources();
+        //Console.WriteLine($"资源长度：{length}");
+        //await Task.Run(() => { LoadResources(); });
+        Console.WriteLine("读取资源完成");
+
+        Console.WriteLine($"进入 {sceneName}");
+    }
+
+    static async Task<int> LoadResources()
+    {
+        Console.WriteLine("正在读取资源");
+
+        var httpClient = new System.Net.Http.HttpClient();
+        int exampleInt = (await httpClient.GetStringAsync("http://msdn.microsoft.com")).Length;
+        Console.WriteLine("返回资源");
+        return exampleInt;
     }
 }
 
@@ -77,8 +130,6 @@ public class ReverseStringTest
         return str_new.ToString();
     }
 }
-
-
 
 public class TreeNode
 {
@@ -100,11 +151,11 @@ public class MaxDepthOfBSTTest
 
     void PreorderTraverse(TreeNode node, int depth)
     {
-        if(node != null)
+        if (node != null)
         { depth += 1; if (depth > depth_max) depth_max = depth; }
         else { return; }
 
-        PreorderTraverse(node.left, depth);  
+        PreorderTraverse(node.left, depth);
         PreorderTraverse(node.right, depth);
     }
 }
