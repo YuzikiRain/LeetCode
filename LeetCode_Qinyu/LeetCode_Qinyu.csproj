@@ -49,6 +49,7 @@
     <Compile Include="DeleteNode\DeleteNode.cs" />
     <Compile Include="NaryTreePreoderTraversal\NaryTreePreoderTraversal.cs" />
     <Compile Include="HasAlternatingBits\HasAlternatingBits.cs" />
+    <Compile Include="Permutations46\Permutations.cs" />
     <Compile Include="ShortestToChar\ShortestToChar.cs" />
     <Compile Include="TitleToNumber\TitleToNumber.cs" />
     <Compile Include="MaxDepthOfNAryTree\MaxDepthOfNAryTree.cs" />
@@ -61,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BinaryTreeInorderTraversal\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

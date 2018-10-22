@@ -57,9 +57,14 @@ class Program
         //naryTreePreoderTraversal.Test();
 
         // 338. 比特位计数
-        var countingBits338 = new LeetCode_Qinyu.CountingBits338.CountingBits338();
-        countingBits338.Test();
+        //var countingBits338 = new LeetCode_Qinyu.CountingBits338.CountingBits338();
+        //countingBits338.Test();
         #endregion
+
+        // 46. Permutations
+        var permutations46 = new LeetCode_Qinyu.Permutations46.Permutations();
+        permutations46.Test();
+
 
         //EnterScene += LoadSceneAsync;
         //EnterScene("战斗界面");
